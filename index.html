@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer">
     <title>公民山海經：天宮修練版01</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -260,7 +261,10 @@
                     <div class="flex items-center gap-3.5">
                         <!-- 天宮女神頭像 -->
                         <div class="relative shrink-0 cursor-pointer group" onclick="previewCharacterArt('天宮女神 · 瑤池傳道仙尊', CHARACTER_ART.goddess)">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-sky-500/30 via-purple-500/30 to-amber-500/30 border-2 border-sky-300/80 flex items-center justify-center shadow-lg group-hover:scale-105 transition overflow-hidden">
+                            <img data-goddess-img="true" src="https://i.postimg.cc/nVdt7Vst/CSD-RPG-14-yao-chi-chuan-dao-xian-zun.png" referrerpolicy="no-referrer" alt="天宮女神" 
+                                class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover border-2 border-sky-300/80 shadow-lg bg-slate-900 group-hover:scale-105 transition"
+                                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
+                            <div class="hidden w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-sky-500/30 via-purple-500/30 to-amber-500/30 border-2 border-sky-300/80 items-center justify-center shadow-lg overflow-hidden">
                                 <i class="fa-solid fa-wand-magic-sparkles text-2xl sm:text-3xl text-sky-200"></i>
                             </div>
                             <span class="absolute -bottom-1 -right-1 bg-sky-400 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow">女神</span>
@@ -392,9 +396,15 @@
                             </div>
 
                             <div class="flex items-center gap-3.5 mb-4">
-                                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-sky-500/30 via-indigo-500/20 to-amber-500/30 border-2 border-sky-400/70 flex flex-col items-center justify-center shadow-lg shrink-0">
-                                    <i class="fa-solid fa-wand-magic-sparkles text-3xl sm:text-4xl text-sky-200 mb-1"></i>
-                                    <span class="text-[10px] font-bold text-amber-300">天宮女神</span>
+                                <div class="relative shrink-0 cursor-pointer group" onclick="previewCharacterArt('天宮女神 · 瑤池傳道仙尊', CHARACTER_ART.goddess)">
+                                    <img data-goddess-img="true" src="https://i.postimg.cc/nVdt7Vst/CSD-RPG-14-yao-chi-chuan-dao-xian-zun.png" referrerpolicy="no-referrer" alt="天宮女神" 
+                                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-sky-400/80 shadow-lg bg-slate-900 group-hover:scale-105 transition"
+                                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
+                                    <div class="hidden w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-sky-500/30 via-indigo-500/20 to-amber-500/30 border-2 border-sky-400/70 flex-col items-center justify-center shadow-lg">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-3xl sm:text-4xl text-sky-200 mb-1"></i>
+                                        <span class="text-[10px] font-bold text-amber-300">天宮女神</span>
+                                    </div>
+                                    <span class="absolute -bottom-1 -right-1 bg-sky-400 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow">瑤池仙尊</span>
                                 </div>
                                 <div>
                                     <h3 class="serif-title text-xl sm:text-2xl font-bold text-white mb-1">與女神修行</h3>
@@ -640,7 +650,7 @@
                     <div class="flex items-center justify-between mb-2">
                         <div class="flex items-center gap-3">
                             <div class="relative shrink-0 cursor-pointer group" onclick="previewCurrentBossArt()">
-                                <img id="battle-boss-img" src="" alt="入侵者立繪" 
+                                <img id="battle-boss-img" src="" referrerpolicy="no-referrer" alt="入侵者立繪" 
                                     class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border-2 border-red-400/80 shadow-lg bg-slate-900 group-hover:scale-105 transition"
                                     onerror="this.style.display='none'; document.getElementById('battle-boss-icon-fallback').classList.remove('hidden'); document.getElementById('battle-boss-icon-fallback').classList.add('flex');">
                                 <div id="battle-boss-icon-fallback" class="hidden w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-red-600/30 border border-red-400 items-center justify-center text-red-300">
@@ -870,7 +880,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <img id="art-preview-img" src="" alt="立繪預覽" class="w-full aspect-square object-cover rounded-xl border border-amber-500/40 shadow-2xl mb-3 bg-slate-950">
+            <img id="art-preview-img" src="" referrerpolicy="no-referrer" alt="立繪預覽" class="w-full aspect-square object-cover rounded-xl border border-amber-500/40 shadow-2xl mb-3 bg-slate-950">
             <button onclick="closeArtPreview()" class="btn-gold px-6 py-2 rounded-xl font-bold text-xs">關閉預覽</button>
         </div>
     </div>
@@ -880,8 +890,8 @@
          * 0. 角色插圖網址設定 (沿用原版香港問題的由來立繪)
          *************************************************************************/
         const CHARACTER_ART = {
-            goddess: 'https://i.postimg.cc/J4RvpDPt/CSD-RPG-01-shi-fu.png',
-            boss_t1: 'https://i.postimg.cc/pXP4shqd/CSD-RPG-02-xiang-gang-wen-ti-de-you-lai.png'
+            goddess: 'https://i.postimg.cc/nVdt7Vst/CSD-RPG-14-yao-chi-chuan-dao-xian-zun.png',
+            boss_t1: 'https://i.postimg.cc/Vs7cMsS8/CSD-RPG15-xuan-tie-zhong-dun-bing-lei-mo-jiang.png'
         };
 
         function previewCharacterArt(title, imgUrl) {
@@ -1308,7 +1318,22 @@
         /*************************************************************************
          * 5. 初始化與本機儲存管理
          *************************************************************************/
+        function syncGoddessAvatarImages() {
+            document.querySelectorAll('img[data-goddess-img="true"]').forEach(img => {
+                img.referrerPolicy = 'no-referrer';
+                img.style.display = 'block';
+                if (img.src !== CHARACTER_ART.goddess) {
+                    img.src = CHARACTER_ART.goddess;
+                }
+                if (img.nextElementSibling) {
+                    img.nextElementSibling.classList.add('hidden');
+                    img.nextElementSibling.classList.remove('flex');
+                }
+            });
+        }
+
         window.onload = function () {
+            syncGoddessAvatarImages();
             populateSubtopicSelectors();
             checkExistingSaveOnWelcome();
         };
@@ -1859,7 +1884,7 @@
                         <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
                             <div class="flex items-center gap-3.5">
                                 <div class="relative shrink-0 cursor-pointer group" onclick="previewCharacterArt('${boss.name} · ${boss.subtitle}', '${boss.imgUrl}')">
-                                    <img src="${boss.imgUrl}" alt="${boss.name}" 
+                                    <img src="${boss.imgUrl}" referrerpolicy="no-referrer" alt="${boss.name}" 
                                         class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 shadow-lg bg-slate-950 group-hover:scale-105 transition"
                                         onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
                                     <div class="hidden w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-500/20 text-amber-300 border-2 border-amber-400 items-center justify-center text-2xl">
@@ -2696,30 +2721,78 @@
             startBattleTurnQuestion();
         }
 
-        // 擊退天宮入侵者後，除了連續獲得 3 個 10 倍秘笈外，同時升級天宮神兵與仙甲（儲存在 equipment 欄位，可帶回原版！）
+        // 將裝備安全同步至背包 (equipment.inventory)，確保未來原版更新推出「背包系統」時，原版裝備與天宮裝備都能完整保留不遺失！
+        function upsertEquipmentToInventory(item) {
+            if (!item || !item.id) return;
+            gameState.player.equipment ||= { weapon: null, armor: null, accessory: null, inventory: [] };
+            if (!Array.isArray(gameState.player.equipment.inventory)) {
+                gameState.player.equipment.inventory = [];
+            }
+            const inv = gameState.player.equipment.inventory;
+            // 若是同系列的「天宮軒轅神劍」或「天宮昊天仙甲」，直接更新為更高階版本；若是原版的不同武器防具則完整保留在背包中
+            const existingIdx = inv.findIndex(x => x && (x.id === item.id || (x.series && item.series && x.series === item.series)));
+            if (existingIdx >= 0) {
+                inv[existingIdx] = { ...inv[existingIdx], ...item };
+            } else {
+                inv.push({ ...item });
+            }
+        }
+
+        // 擊退天宮入侵者後，除了連續獲得 3 個 10 倍秘笈外，同時升級天宮神兵與仙甲（儲存在 equipment 與 inventory 背包欄位，可帶回原版！）
         function grantTiangongEquipmentUpgrade(stageCleared) {
             gameState.player.equipment ||= { weapon: null, armor: null, accessory: null, inventory: [] };
+            if (!Array.isArray(gameState.player.equipment.inventory)) {
+                gameState.player.equipment.inventory = [];
+            }
             const eq = gameState.player.equipment;
 
-            const curWeaponTier = eq.weapon?.tier || 0;
+            // 先把玩家原本從《香江風雲錄》穿在身上的武器與防具收進背包 (inventory)，避免被直接覆蓋消失
+            if (eq.weapon && eq.weapon.id) upsertEquipmentToInventory(eq.weapon);
+            if (eq.armor && eq.armor.id) upsertEquipmentToInventory(eq.armor);
+
+            // 找出玩家目前已擁有的天宮神劍與天宮仙甲最高階級（不論穿在身上或放在背包）
+            const invWeapon = eq.inventory.find(x => x && (x.series === 'tiangong_01_weapon' || String(x.id).startsWith('tiangong_sword_')));
+            const curWeaponTier = Math.max(
+                (eq.weapon && String(eq.weapon.id).startsWith('tiangong_sword_')) ? (eq.weapon.tier || 0) : 0,
+                invWeapon?.tier || 0
+            );
             const newWeaponTier = Math.max(curWeaponTier + 1, stageCleared);
-            eq.weapon = {
+            const newWeapon = {
                 id: `tiangong_sword_t${newWeaponTier}`,
+                series: 'tiangong_01_weapon',
+                slot: 'weapon',
                 name: `天宮軒轅神劍·${newWeaponTier}階`,
                 tier: newWeaponTier,
                 atkBonus: newWeaponTier * 150,
                 ultBonus: newWeaponTier * 40
             };
 
-            const curArmorTier = eq.armor?.tier || 0;
+            const invArmor = eq.inventory.find(x => x && (x.series === 'tiangong_01_armor' || String(x.id).startsWith('tiangong_armor_')));
+            const curArmorTier = Math.max(
+                (eq.armor && String(eq.armor.id).startsWith('tiangong_armor_')) ? (eq.armor.tier || 0) : 0,
+                invArmor?.tier || 0
+            );
             const newArmorTier = Math.max(curArmorTier + 1, stageCleared);
-            eq.armor = {
+            const newArmor = {
                 id: `tiangong_armor_t${newArmorTier}`,
+                series: 'tiangong_01_armor',
+                slot: 'armor',
                 name: `天宮昊天仙甲·${newArmorTier}階`,
                 tier: newArmorTier,
                 hpBonus: newArmorTier * 800,
                 defBonus: newArmorTier * 120
             };
+
+            // 同步寫入背包，若天宮神裝比身上現有裝備更強則自動裝備（否則保留在背包供玩家自由切換）
+            upsertEquipmentToInventory(newWeapon);
+            upsertEquipmentToInventory(newArmor);
+
+            if (!eq.weapon || (newWeapon.atkBonus >= (eq.weapon.atkBonus || 0))) {
+                eq.weapon = newWeapon;
+            }
+            if (!eq.armor || (newArmor.defBonus >= (eq.armor.defBonus || 0))) {
+                eq.armor = newArmor;
+            }
 
             gameState.multiplayerRecord ||= { pvpWins: 0, pvpMatches: 0, coopBossClears: 0, earnedRewards: [] };
             gameState.multiplayerRecord.coopBossClears = (gameState.multiplayerRecord.coopBossClears || 0) + 1;
